@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Chamil Kulasingha — Full Stack Developer & BICT Undergraduate at Rajarata University of Sri Lanka. Portfolio showcasing projects, skills, and experience." />
+  <meta name="keywords"
+    content="Chamil Kulasingha, Full Stack Developer, BICT, Rajarata University, Sri Lanka, React Native, Flutter, Firebase" />
+  <meta property="og:title" content="Chamil Kulasingha — Full Stack Developer Portfolio" />
+  <meta property="og:description" content="Building efficient web & mobile applications — one commit at a time." />
+  <meta property="og:image" content="https://chamilkulasingha.com/assets/images/profile.jpg" />
+  <meta property="og:url" content="https://chamilkulasingha.com" />
+  <meta property="og:type" content="website" />
+  
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Chamil Kulasingha | Full Stack Developer" />
+  <meta name="twitter:description" content="Building efficient web & mobile applications — one commit at a time." />
+  <meta name="twitter:image" content="https://chamilkulasingha.com/assets/images/profile.jpg" />
+  
+  <title>Chamil Kulasingha | Full Stack Developer</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/ck_logo.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+
+  <!-- Icons (Remix Icons CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- GitHub Repos card styles (inline) -->
+  <style>
+    .github-repos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 18px;
+      margin-top: 32px;
+    }
+
+    .github-repo-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: all var(--transition);
+      text-decoration: none;
+    }
+
+    .github-repo-card:hover {
+      border-color: var(--border-hover);
+      background: var(--bg-card-hover);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-accent);
+    }
+
+    .repo-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .repo-icon {
+      font-size: 1.1rem;
+    }
+
+    .repo-name {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .repo-desc {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .repo-meta {
+      display: flex;
+      gap: 14px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      align-items: center;
+    }
+
+    .repo-lang {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .lang-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ══════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════ -->
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <!-- Logo -->
+      <a href="#hero" class="nav-logo">
+        <img src="assets/images/ck_logo.png" alt="CK Logo" />
+      </a>
+
+      <!-- Nav Links -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certificates">Certs</a></li>
+        <li><a href="#activities">Activities</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="assets/cv/Chamil_Kulasingha_CV.pdf" download class="btn nav-cta">Download CV</a></li>
+      </ul>
+
+      <!-- Hamburger -->
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+  <section id="hero">
+    <canvas id="particles-canvas"></canvas>
+
+    <div class="container hero-content">
+      <p class="hero-greeting reveal">Hello, I'm! 👋</p>
+      <h1 class="hero-name reveal">Chamil Kulasingha</h1>
+      <p class="hero-title reveal">
+        <span id="typed-title" class="highlight">Full Stack Developer</span>
+        <span style="color:var(--text-muted)"> | BICT Undergraduate | Software Engineering Enthusiast</span>
+      </p>
+      <p class="hero-tagline reveal">
+        Building efficient web &amp; mobile applications — one commit at a time.
+      </p>
+
+      <div class="hero-actions reveal">
+        <a href="#projects" class="btn btn-primary">
+          <i class="ri-code-s-slash-line"></i> View My Work
+        </a>
+        <a href="assets/cv/Chamil Kulasingha CV.pdf" download class="btn btn-outline">
+          <i class="ri-download-line"></i> Download CV
+        </a>
+      </div>
+
+      <div class="hero-socials reveal">
+        <a href="https://github.com/CHaMiYa2" target="_blank" rel="noopener" class="social-icon" title="GitHub">
+          <i class="ri-github-fill"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/chamil-kulasingha-6128a8309/" target="_blank" rel="noopener"
+          class="social-icon" title="LinkedIn">
+          <i class="ri-linkedin-fill"></i>
+        </a>
+        <a href="mailto:chamilviranga2@gmail.com" class="social-icon" title="Email">
+          <i class="ri-mail-fill"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 5v14M5 12l7 7 7-7" />
+      </svg>
+      <span>scroll</span>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+     ABOUT
+══════════════════════════════════════ -->
+  <section id="about">
+    <div class="container">
+      <span class="section-label reveal">01 — About Me</span>
+      <h2 class="section-title reveal">Who I Am</h2>
+      <div class="section-underline reveal"></div>
+
+      <div class="about-grid">
+        <!-- Photo -->
+        <div class="about-photo-wrap reveal">
+          <div class="about-photo-frame">
+            <img src="assets/images/profile.jpg" alt="Chamil Kulasingha" loading="lazy" />
+          </div>
+          <div class="about-photo-badge">🎓 BICT (Hons) — 2026</div>
+        </div>
+
+        <!-- Text -->
+        <div class="about-text">
+          <p class="reveal">
+            I'm a <strong>final-year BICT (Hons) student</strong> at the <strong>Faculty of Technology, Rajarata
+              University of Sri Lanka</strong> (2022–2026), passionate about creating meaningful digital experiences
+            through code.
+          </p>
+          <p class="reveal">
+            My focus lies in <strong>Full Stack Web Development</strong>, <strong>Mobile Application
+              Development</strong>, and <strong>Software Engineering</strong>. I enjoy transforming complex problems
+            into elegant, scalable solutions.
+          </p>
+          <p class="reveal">
+            When I'm not coding, you'll find me behind a camera lens as part of <strong>FOT Media</strong>, out on a
+            trail with the <strong>RUSL Hiking Club</strong>, or contributing to the tech community through
+            <strong>ATiT</strong>.
+          </p>
+
+          <div class="about-info-grid reveal">
+            <div class="about-info-item">
+              <i class="ri-graduation-cap-line icon"></i>
+              <span>BICT (Hons), Rajarata University</span>
+            </div>
+            <div class="about-info-item">
+              <i class="ri-map-pin-line icon"></i>
+              <span>Rathnapura, Sri Lanka</span>
+            </div>
+            <div class="about-info-item">
+              <i class="ri-calendar-line icon"></i>
+              <span>Batch 2022–2026</span>
+            </div>
+            <div class="about-info-item">
+              <i class="ri-mail-line icon"></i>
+              <span>chamilviranga2@gmail.com</span>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <p
+              style="font-size:0.82rem;color:var(--text-muted);margin-bottom:12px;text-transform:uppercase;letter-spacing:1px;">
+              Interests</p>
+            <div class="about-interests">
+              <span class="interest-tag">📷 Photography</span>
+              <span class="interest-tag">🥾 Hiking</span>
+              <span class="interest-tag">💻 Open Source</span>
+              <span class="interest-tag">🤖 AI & ML</span>
+              <span class="interest-tag">🎨 UI/UX Design</span>
+              <span class="interest-tag">🌐 Tech Community</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+     SKILLS
+══════════════════════════════════════ -->
+  <section id="skills">
+    <div class="container">
+      <span class="section-label reveal">02 — Skills</span>
+      <h2 class="section-title reveal">Tech Stack</h2>
+      <div class="section-underline reveal"></div>
+
+      <div class="skills-grid">
+
+        <div class="skill-category reveal">
+          <h3>Languages</h3>
+          <div class="skills-badges">
+            <span class="skill-badge"><span class="sk-icon">🌐</span> HTML</span>
+            <span class="skill-badge"><span class="sk-icon">🎨</span> CSS</span>
+            <span class="skill-badge"><span class="sk-icon">⚡</span> JavaScript</span>
+            <span class="skill-badge"><span class="sk-icon">🔷</span> TypeScript</span>
+            <span class="skill-badge"><span class="sk-icon">🐍</span> Python</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <h3>Mobile Development</h3>
+          <div class="skills-badges">
+            <span class="skill-badge"><span class="sk-icon">⚛️</span> React Native</span>
+            <span class="skill-badge"><span class="sk-icon">🦋</span> Flutter</span>
+            <span class="skill-badge"><span class="sk-icon">🎯</span> Dart</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <h3>Databases</h3>
+          <div class="skills-badges">
+            <span class="skill-badge"><span class="sk-icon">🐬</span> MySQL</span>
+            <span class="skill-badge"><span class="sk-icon">🔥</span> Firebase</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <h3>Design Tools</h3>
+          <div class="skills-badges">
+            <span class="skill-badge"><span class="sk-icon">🖌️</span> Figma</span>
+            <span class="skill-badge"><span class="sk-icon">🅿️</span> Adobe Photoshop</span>
+            <span class="skill-badge"><span class="sk-icon">📷</span> Adobe Lightroom</span>
+            <span class="skill-badge"><span class="sk-icon">🎨</span> Canva</span>
+            <span class="skill-badge"><span class="sk-icon">📦</span> Blender</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <h3>Dev Tools &amp; Platforms</h3>
+          <div class="skills-badges">
+            <span class="skill-badge"><span class="sk-icon">🌿</span> Git</span>
+            <span class="skill-badge"><span class="sk-icon">🐙</span> GitHub</span>
+            <span class="skill-badge"><span class="sk-icon">💻</span> VS Code</span>
+            <span class="skill-badge"><span class="sk-icon">🤖</span> Android Studio</span>
+            <span class="skill-badge"><span class="sk-icon">🔥</span> Firebase Console</span>
+            <span class="skill-badge"><span class="sk-icon">🧠</span> Google Colab</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+     PROJECTS
+══════════════════════════════════════ -->
+  <section id="projects">
+    <div class="container">
+      <span class="section-label reveal">03 — Projects</span>
+      <h2 class="section-title reveal">Things I've Built</h2>
+      <div class="section-underline reveal"></div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1: Steganography -->
+        <div class="project-card reveal">
+          <div class="project-top">
+            <span class="project-folder">🔐</span>
+            <div class="project-links">
+              <a href="https://github.com/CHaMiYa2" target="_blank" rel="noopener" class="project-link" title="GitHub">
+                <i class="ri-github-fill"></i>
+              </a>
+              <a href="#" class="project-link" title="Live Demo">
+                <i class="ri-external-link-line"></i>
+              </a>
+            </div>
+          </div>
+          <p class="project-type">🎓 Final Year Research Project</p>
+          <h3 class="project-title">Adaptive Robust Steganography</h3>
+          <p class="project-desc">
+            A Python-based steganography tool using Hybrid DWT-SVD, Shannon Entropy, and Reed-Solomon error correction
+            to embed encrypted data in images that survive aggressive social media compression (JPEG, WhatsApp,
+            Telegram).
+          </p>
+          <div class="project-footer">
+            <div class="tech-badges">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">OpenCV</span>
+              <span class="tech-badge">NumPy</span>
+              <span class="tech-badge">PyWavelets</span>
+              <span class="tech-badge">DWT</span>
+              <span class="tech-badge">SVD</span>
+            </div>
+            <span class="project-status status-active">
+              <span class="status-dot"></span>In Progress
+            </span>
+          </div>
+        </div>
+
+        <!-- Project 2: Train Management -->
+        <div class="project-card reveal">
+          <div class="project-top">
+            <span class="project-folder">🚂</span>
+            <div class="project-links">
+              <a href="https://github.com/CHaMiYa2/railgo_app" target="_blank" rel="noopener" class="project-link"
+                title="GitHub">
+                <i class="ri-github-fill"></i>
+              </a>
+            </div>
+          </div>
+          <p class="project-type">📱 Third Year Project</p>
+          <h3 class="project-title">Train Management Mobile App</h3>
+          <p class="project-desc">
+            Mobile system for train management and passenger experience with real-time notifications for platform
+            changes, boarding times, and travel updates. Enhances commuter journey with live data synchronisation.
+          </p>
+          <div class="project-footer">
+            <div class="tech-badges">
+              <span class="tech-badge">React Native</span>
+              <span class="tech-badge">TypeScript</span>
+              <span class="tech-badge">Firebase</span>
+            </div>
+            <span class="project-status status-complete">
+              <span class="status-dot"></span>Completed
+            </span>
+          </div>
+        </div>
+
+        <!-- Project 3: Smart Dashboard -->
+        <div class="project-card reveal">
+          <div class="project-top">
+            <span class="project-folder">📊</span>
+            <div class="project-links">
+              <a href="https://github.com/CHaMiYa2" target="_blank" rel="noopener" class="project-link" title="GitHub">
+                <i class="ri-github-fill"></i>
+              </a>
+            </div>
+          </div>
+          <p class="project-type">📱 Second Year Project</p>
+          <h3 class="project-title">Smart Dashboard — New Tech Faculty</h3>
+          <p class="project-desc">
+            Mobile app giving students and staff centralized access to timetables, attendance, announcements, and
+            learning resources. Streamlines academic communication for the Faculty of Technology, RUSL.
+          </p>
+          <div class="project-footer">
+            <div class="tech-badges">
+              <span class="tech-badge">Flutter</span>
+              <span class="tech-badge">Dart</span>
+              <span class="tech-badge">Firebase</span>
+            </div>
+            <span class="project-status status-complete">
+              <span class="status-dot"></span>Completed
+            </span>
+          </div>
+        </div>
+
+        <!-- Project 4: Food Ordering -->
+        <div class="project-card reveal">
+          <div class="project-top">
+            <span class="project-folder">🍔</span>
+            <div class="project-links">
+              <a href="https://github.com/CHaMiYa2/Food-Order" target="_blank" rel="noopener" class="project-link"
+                title="GitHub">
+                <i class="ri-github-fill"></i>
+              </a>
+            </div>
+          </div>
+          <p class="project-type">🌐 First Year Project</p>
+          <h3 class="project-title">Online Food Ordering System</h3>
+          <p class="project-desc">
+            Web-based system for browsing restaurant menus and placing orders online, with full database integration for
+            order tracking and management. Supports admin panel for menu and order administration.
+          </p>
+          <div class="project-footer">
+            <div class="tech-badges">
+              <span class="tech-badge">HTML</span>
+              <span class="tech-badge">CSS</span>
+              <span class="tech-badge">PHP</span>
+              <span class="tech-badge">MySQL</span>
+            </div>
+            <span class="project-status status-complete">
+              <span class="status-dot"></span>Completed
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- GitHub Repos Section -->
+      <div style="margin-top:72px;">
+        <span class="section-label reveal">GitHub Repositories</span>
+        <h3 class="reveal"
+          style="font-family:'Poppins',sans-serif;font-size:1.5rem;font-weight:700;color:var(--text-primary);margin-bottom:8px;">
+          Latest Public Repos <span id="github-repo-count"
+            style="font-size:1rem;color:var(--accent);font-family:'Fira Code',monospace;"></span>
+        </h3>
+
+        <div class="github-repos-grid" id="github-repos">
+          <!-- Repos injected by github.js -->
+          <div
+            style="grid-column:1/-1;text-align:center;color:var(--text-muted);font-family:'Fira Code',monospace;font-size:0.85rem;padding:32px 0;">
+            <div class="loading-dots">Loading repositories<span class="dots">...</span></div>
+          </div>
+        </div>
+
+        <div class="github-cta reveal">
+          <a href="https://github.com/CHaMiYa2" target="_blank" rel="noopener" class="btn btn-outline">
+            <i class="ri-github-fill"></i> View All on GitHub
+          </a>
+          <p class="github-note">// source of truth for my latest work</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+     CERTIFICATES
+══════════════════════════════════════ -->
+  <section id="certificates">
+    <div class="container">
+      <span class="section-label reveal">04 — Certifications</span>
+      <h2 class="section-title reveal">Licenses &amp; Certificates</h2>
+      <div class="section-underline reveal"></div>
+
+      <div class="certs-grid">
+
+        <div class="cert-card reveal">
+          <div class="cert-icon">🌐</div>
+          <div>
+            <p class="cert-issuer">Sabaragamuwa University (ODL)</p>
+            <p class="cert-name">Certificate in English Language</p>
+          </div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon">🎨</div>
+          <div>
+            <p class="cert-issuer">University of Moratuwa (CODL)</p>
+            <p class="cert-name">Web Design for Beginners</p>
+          </div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon">🐍</div>
+          <div>
+            <p class="cert-issuer">University of Moratuwa (CODL)</p>
+            <p class="cert-name">Python for Beginners</p>
+          </div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon">🤖</div>
+          <div>
+            <p class="cert-issuer">Simpli Learn</p>
+            <p class="cert-name">Generative AI for Beginners</p>
+          </div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon">📈</div>
+          <div>
+            <p class="cert-issuer">Simpli Learn</p>
+            <p class="cert-name">Machine Learning Using Python</p>
+          </div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon">⚙️</div>
+          <div>
+            <p class="cert-issuer">Simpli Learn</p>
+            <p class="cert-name">Introduction to DevOps Tools</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+     ACTIVITIES
+══════════════════════════════════════ -->
+  <section id="activities">
+    <div class="container">
+      <span class="section-label reveal">05 — Extracurricular</span>
+      <h2 class="section-title reveal">Beyond the Code</h2>
+      <div class="section-underline reveal"></div>
+
+      <div class="activities-grid">
+
+        <div class="activity-card reveal">
+          <div class="activity-icon">📸</div>
+          <div>
+            <p class="activity-role">Photographer</p>
+            <p class="activity-org">FOT Media</p>
+            <p class="activity-desc">Official Media Unit of the Faculty of Technology, RUSL. Covering academic events,
+              seminars, and university moments.</p>
+          </div>
+        </div>
+
+        <div class="activity-card reveal">
+          <div class="activity-icon">💡</div>
+          <div>
+            <p class="activity-role">Member</p>
+            <p class="activity-org">ATiT — Association of Technology IT</p>
+            <p class="activity-desc">Active member in the university's IT society at RUSL, participating in tech
+              workshops, hackathons, and community initiatives.</p>
+          </div>
+        </div>
+
+        <div class="activity-card reveal">
+          <div class="activity-icon">🥾</div>
+          <div>
+            <p class="activity-role">Member</p>
+            <p class="activity-org">RUSL Hiking Club</p>
+            <p class="activity-desc">Exploring Sri Lanka's trails and mountains, combining a love for adventure with
+              camaraderie and the great outdoors.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+     CONTACT
+══════════════════════════════════════ -->
+  <section id="contact">
+    <div class="container">
+      <span class="section-label reveal">06 — Contact</span>
+      <h2 class="section-title reveal">Get In Touch</h2>
+      <div class="section-underline reveal"></div>
+
+      <div class="contact-grid">
+        <!-- Info -->
+        <div class="contact-info">
+          <h3 class="reveal">Let's Work Together</h3>
+          <p class="reveal">
+            I'm open to internship opportunities, freelance projects, collaborations, and interesting conversations
+            about tech. My inbox is always open!
+          </p>
+
+          <div class="contact-items">
+            <div class="contact-item reveal">
+              <div class="contact-item-icon"><i class="ri-mail-fill"></i></div>
+              <div>
+                <p class="contact-item-label">Email</p>
+                <a href="mailto:chamilviranga2@gmail.com" class="contact-item-value"
+                  style="color:var(--text-primary);transition:color 0.2s;"
+                  onmouseover="this.style.color='var(--accent)'"
+                  onmouseout="this.style.color='var(--text-primary)'">chamilviranga2@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-item reveal">
+              <div class="contact-item-icon"><i class="ri-phone-fill"></i></div>
+              <div>
+                <p class="contact-item-label">Phone</p>
+                <a href="tel:+94785651944" class="contact-item-value"
+                  style="color:var(--text-primary);transition:color 0.2s;"
+                  onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-primary)'">+94
+                  785 651 944</a>
+              </div>
+            </div>
+
+            <div class="contact-item reveal">
+              <div class="contact-item-icon"><i class="ri-map-pin-fill"></i></div>
+              <div>
+                <p class="contact-item-label">Location</p>
+                <p class="contact-item-value">Rathnapura, Sri Lanka</p>
+              </div>
+            </div>
+
+            <div class="contact-item reveal">
+              <div class="contact-item-icon"><i class="ri-github-fill"></i></div>
+              <div>
+                <p class="contact-item-label">GitHub</p>
+                <a href="https://github.com/CHaMiYa2" target="_blank" rel="noopener" class="contact-item-value"
+                  style="color:var(--text-primary);transition:color 0.2s;"
+                  onmouseover="this.style.color='var(--accent)'"
+                  onmouseout="this.style.color='var(--text-primary)'">github.com/chamilkuulasingha</a>
+              </div>
+            </div>
+
+            <div class="contact-item reveal">
+              <div class="contact-item-icon"><i class="ri-linkedin-fill"></i></div>
+              <div>
+                <p class="contact-item-label">LinkedIn</p>
+                <a href="https://www.linkedin.com/in/chamil-kulasingha-6128a8309/" target="_blank" rel="noopener"
+                  class="contact-item-value" style="color:var(--text-primary);transition:color 0.2s;"
+                  onmouseover="this.style.color='var(--accent)'"
+                  onmouseout="this.style.color='var(--text-primary)'">linkedin.com/in/chamil-kulasingha</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <form class="contact-form reveal" id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="cf-name">Your Name</label>
+            <input type="text" id="cf-name" name="name" placeholder="John Doe" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="cf-email">Email Address</label>
+            <input type="email" id="cf-email" name="email" placeholder="john@example.com" required
+              autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" placeholder="Hi Chamil, I'd love to discuss..."
+              required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-send">
+            <i class="ri-send-plane-fill"></i> Send Message
+          </button>
+          <div class="form-success" id="form-success">
+            <i class="ri-checkbox-circle-fill" style="font-size:1.2rem;"></i>
+            Message sent successfully! I'll be in touch soon.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+  <footer>
+    <div class="container footer-inner">
+      <p class="footer-copy">
+        Designed &amp; Built by <span>Chamil Kulasingha</span> &copy; <span id="year"></span>
+      </p>
+      <div class="footer-socials">
+        <a href="https://github.com/CHaMiYa2" target="_blank" rel="noopener" class="social-icon" title="GitHub">
+          <i class="ri-github-fill"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/chamil-kulasingha-6128a8309/" target="_blank" rel="noopener"
+          class="social-icon" title="LinkedIn">
+          <i class="ri-linkedin-fill"></i>
+        </a>
+        <a href="mailto:chamilviranga2@gmail.com" class="social-icon" title="Email">
+          <i class="ri-mail-fill"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── Back to Top ─────────────────────── -->
+  <button id="back-to-top" aria-label="Back to top">
+    <i class="ri-arrow-up-line"></i>
+  </button>
+
+  <!-- ── Scripts ──────────────────────────── -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="js/main.js"></script>
+  <script src="js/github.js"></script>
+
+</body>
+
+</html>
